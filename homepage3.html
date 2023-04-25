@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+        </style>
+        <link rel="stylesheet" href="HPstyle.css">
+        <!-- <script src="JavaScript.js"></script> -->
+        <script>
+            function validateForm() {
+
+                    let number1 =parseInt( document.getElementById('elementnumber').value)
+                    let code1 = document.getElementById('elementcode').value
+                    let name1  = document.getElementById('elementname').value
+                    let col11  = document.getElementById('Colour1').value
+                    let col21  = document.getElementById('Colour1').value
+                    let col31  = document.getElementById('Colour1').value
+                    let rad1  = parseInt(document.getElementById('Radius').value)
+                    
+                   if(number1==""||number1<=0 || number1>100 || isNaN(number1)==true ){
+                    alert('Not Valid number')
+                    return false
+                    } 
+                   else if(code1==""||code1.length<=0|| code1.length>2 || isNaN(code1)==false){
+                    alert('Not Valid code')
+                    return false
+                   }
+                   else if(name1==""||name1.length<=0|| name1.length>10 || isNaN(name1)==false){
+                    alert('Not Valid name')
+                    return false
+                   }
+                   else if(col11==""||col11.length<=0|| col11.length>6 ){
+                    alert('Not Valid colour 1')
+                    return false
+                   }  
+                   else if(col21==""||col21.length<=0|| col21.length>10 ){
+                    alert('Not Valid colour 2')
+                    return false
+                   }
+                   else if(col21==""||col31.length<=0|| col31.length>10 ){
+                    alert('Not Valid colour 3')
+                    return false
+                   }  
+                   else if(rad1==""||rad1<=0 || rad1>100 || isNaN(rad1)==true){
+                    alert('Not Valid radius')
+                    return false
+                    } 
+                    
+
+
+          }
+        </script>
+
+        <title> CIS 2750 A4</title>
+        <body>
+            <h1 id='centermain'>Add/Remove Elements</h1>
+            <ul class="list">
+                <li class="listElement"> <a href="homepage.html">Main page</a></li>
+                <li class="listElement"> <a href="homepage2.html">Upload SDF</a> </li>
+                <li class="listElement"> <a href="homepage3.html">Add/Remove Elements</a></li> 
+                <li class="listElement"> <a href="homepage4.html">View Molecules </a> </li>
+            </ul>
+            <h2 style="text-align:left ; color: blue;">Add Element</h2>
+            
+            <form ID="myForm" onsubmit="return validateForm()" action="senddata.html" multipart/form-data  method="post">
+                <label id="element_number">Element Number:</label><br>
+                <input type="text" id="elementnumber" name="elementnumber" required ><br>
+                <label id="element_code">Element Code:</label><br>
+                <input type="text" id="elementcode" name="elementcode" required ><br>
+                <label id="element_name">Element Name:</label><br>
+                <input type="text" id="elementname" name="elementname" required ><br>
+                <label id="Colour_1">Colour 1:</label><br>
+                <input type="text" id="Colour1" name="Colour1" required ><br>
+                <label id="Colour_2">Colour 2:</label><br>
+                <input type="text" id="Colour2" name="Colour2" required ><br>
+                <label id="Colour_3">Colour 3:</label><br>
+                <input type="text" id="Colour3" name="Colour3" required ><br>
+                <label id="Radius_1">Radius:</label><br>
+                <input type="text" id="Radius" name="Radius" required ><br>
+                <input type="submit" value="Submit" >   <!--  need to use Fuct to send values to server-->
+                <!--  -->
+            </form>
+            <h2 style="text-align:left ; color: red;">Remove Element</h2>
+
+     
+            <form action="remove" multipart/form-data method="post">
+                <label id="Remove">Choose a Element:</label>
+                <select id="Element" name="Element">
+                    <script>
+                        const xhttp = new XMLHttpRequest();
+                        // Define a callback function
+                        
+                        xhttp.onload = function () {
+                            k=this.responseText.split(',')
+                            console.log(k)
+                            for (x in k){
+                                option=document.createElement("option")
+                                sel = document.getElementById("Element");
+                                option.setAttribute("value",k[x])
+                                option.setAttribute("id",k[x])
+                                text=document.createTextNode(k[x])
+                                option.appendChild(text)
+                                sel.appendChild(option)
+                            }
+                        }
+                        xhttp.open("GET", "getelements");
+                        xhttp.send();
+                        
+                    </script>
+                </select>
+                <br>
+                <button type="submit">Submit</button>
+              </form>
+
+        </body>
+    </head>
+</html>

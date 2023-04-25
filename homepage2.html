@@ -1,0 +1,41 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+        <link rel="stylesheet" href="HPstyle.css">
+            <title> Upload SDF </title>
+               <!-- <script src="JavaScript.js"></script> -->
+               <script>
+                function validateFile() {
+                    var fileInput = document.getElementById("sdf_file");
+                    var filePath = fileInput.value;
+                    var allowedExtensions = /(\.sdf)$/i;
+                    if (!allowedExtensions.exec(filePath)) {
+                        alert("Please upload a file with a .sdf extension.");
+                        fileInput.value = "";
+                        return false;
+                    }
+                }
+            </script>
+            <body>
+                <h1 id='centermain'>Upload SDF</h1>
+                <ul class="list">
+                    <li class="listElement"> <a href="homepage.html">Main page</a></li>
+                    <li class="listElement"> <a href="homepage2.html">Upload SDF</a> </li>
+                    <li class="listElement"> <a href="homepage3.html">Add/Remove Elements</a></li> 
+                    <li class="listElement"> <a href="homepage4.html">View Molecules </a> </li>
+                </ul>
+                <form action="molecule" onsubmit="return validateFile()" enctype="multipart/form-data" method="post">
+                    <p>
+                    <input type="file" id="sdf_file" name="file"/>
+                    </p>
+                    <p>
+                    <input type="text" id="filename" name="filename"/>
+                    </p>
+                    <p>
+                    <input type="submit" value="Upload"/>
+                    </p>
+                    </form>
+            </body>
+        </head>
+    </html>
+    

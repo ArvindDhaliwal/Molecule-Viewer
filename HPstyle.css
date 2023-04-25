@@ -1,0 +1,56 @@
+#centermain {
+    text-align: center;
+    color: black;
+    
+  }
+a{
+  color: black;
+  text-decoration: none;
+
+}
+#button{
+  color: blue;
+  position: relative;
+  /* top: 25px;
+  left: -75px; */
+}
+a:hover{
+  color: red;
+}
+  .listElement {
+    float: left;
+    margin: 0;
+    padding: 0;
+    display: block;
+    padding: 8px;
+  }
+
+.list{
+
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dddddd;
+}
+
+#image{
+  width:1000px;
+  height:1000px;
+
+  border:3px solid; 
+  border-color: blue; 
+}
+
+.centeright{
+  text-align:right;
+  align-items: right;
+  align-self: right;
+}
+.bold{
+  color: blue;
+
+}
+.list2{
+  color: red;
+}
