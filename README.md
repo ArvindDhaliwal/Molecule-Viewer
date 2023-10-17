@@ -3,9 +3,9 @@ Ability to add/remove and view molecules using the localhost server
 
 1:mol.c/mol.h backend 
 
-2:C to pyhton code via swig(molecule.i) and python code(Moldisplay.py) to create svg files from sdf
+2:C to Python code via swig (molecule.i) and Python code(Moldisplay.py) to create SVG files from SDF
 
-3:SQL databse in python
+3:SQL data in Python
 
 4:server+frondend via HTTP,HTML,CSS,JAVASCRIPT,DOM,AJAX
 
@@ -19,24 +19,24 @@ should be a default set of colours and radius for any elements contained in mole
 not have an entry in the system. It should not be possible for the user to enter malicious
 parameters for the element that can damage the system.
 
-Upload sdf files to the system:
-Design an interface that allows users to upload sdf files to the
-system. Invalid sdf files should be detected, and an error message generated. It should not be
-possible to damage the system with a malicious sdf file. Upon uploading an sdf file, the user
+Upload SDF files to the system:
+Design an interface that allows users to upload SDF files to the
+system. Invalid SDF files should be detected, and an error message generated. It should not be
+possible to damage the system with a malicious SDF file. Upon uploading an SDF file, the user
 should be informed of success. The user should be able to assign the molecule contained in the
-sdf file a name (a malicious name should not be able to damage the system).
+SDF files a name (a malicious name should not be able to damage the system).
 Select from a list of molecules. Design an interface that allows users to select one of the
-molecules that is in the system. Inform the user of the number of atoms and bonds that are in
+molecules that are in the system. Inform the user of the number of atoms and bonds that are in
 the molecule before they select it.
 
-Upload sdf files to the system:
-Design an interface that allows users to upload sdf files to the
-system. Invalid sdf files should be detected, and an error message generated. It should not be
-possible to damage the system with a malicious sdf file. Upon uploading an sdf file, the user
+Upload SDF files to the system:
+Design an interface that allows users to upload SDF files to the
+system. Invalid SDF files should be detected, and an error message generated. It should not be
+possible to damage the system with a malicious SDF file. Upon uploading an SDF file, the user
 should be informed of success. The user should be able to assign the molecule contained in the
-sdf file a name (a malicious name should not be able to damage the system).
+SDF file a name (a malicious name should not be able to damage the system).
 Select from a list of molecules. Design an interface that allows users to select one of the
-molecules that is in the system. Inform the user of the number of atoms and bonds that are in
+molecules that are in the system. Inform the user of the number of atoms and bonds that are in
 the molecule before they select it.
 
 Display a selected molecule:
